@@ -1,21 +1,89 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+baseURL = "https://note.strawbreey.com"
+languageCode = "en-us"
+title = "如沐春风"
+theme = "kagome"
+paginate = 7
+copyright = "© 2021 <a href=\"https://github.com/miiiku/hugo-theme-kagome\">kagome</a>."
+hasCJKLanguage = true
 
-name = "Kagome"
-license = "MIT"
-licenselink = "https://github.com/miiiku/hugo-theme-kagome/blob/main/LICENSE"
-description = "一个卡片风格的Hugo主题"
-homepage = "https://github.com/miiiku/hugo-theme-kagome"
-tags = ['card', 'responsive', 'mobile', 'Neumorphism', 'blog']
-features = ['posts', 'flex', 'card', 'Neumorphism', 'Soft UI', 'widgets']
-min_version = "0.83.1"
-
+# 作者信息
 [author]
-  name = "miiiku"
-  homepage = "https://github.com/miiiku"
+  name = "strawbreey"
+  email = "strawbreey@qq.com"
+  description = "strawbreey"
+  avatar = "/favicon.png"
 
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+# 菜单/导航栏
+[menu]
+  # 顶部导航栏
+  [[menu.main]]
+    identifier = "/"
+    name = "HOME"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    identifier = "/posts"
+    name = "POSTS"
+    url = "/posts"
+    weight = 2
+  [[menu.main]]
+    identifier = "/message"
+    name = "MESSAGE"
+    url = "/message"
+    weight = 3
+  [[menu.main]]
+    identifier = "/link"
+    name = "LINK"
+    url = "/link"
+    weight = 4
+  
+  # 底部社交图标
+  [[menu.social]]
+    identifier = "github"
+    name = "github"
+    url = "https://github.com/strawbreey"
+    weight = 1
+  [[menu.social]]
+    identifier = "email"
+    name = "email"
+    url = "1245788423@qq.com"
+    weight = 4
+
+# URL格式
+[permalinks]
+  posts = "/:section/:year:month:day:15:04/"
+  files = "/:section/:year:month:day:15:04/"
+  docs = "/:section/:year:month:day:15:04/"
+
+# 主题相关配置项
+[params]
+  keywords = ['theme', 'kagome']
+  description = ""
+  mainSections = ["posts"]
+  # 国内备案号
+  beian = ""
+  # TOC目录出现字符长度限制
+  toc_show_len = 300
+
+  [params.analytics]
+    baidu = ""
+
+  [params.widget]
+    # 相关文章推荐数量
+    articles_count = 6
+    # 分类相关显示数量
+    categories_count = 6
+    # 标签相关显示数量
+    tags_count = 12
+
+  [params.aplayer]
+    theme = "#b7daff"
+    autoplay = false
+    loop = "none"
+    mutex = true
+
+  [params.dplayer]
+    theme = "#b7daff"
+    autoplay = false
+    loop = false
+    mutex = true
